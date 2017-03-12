@@ -7,7 +7,7 @@ package com.ykjava.modal;
 public class User {
 
     private Integer id;
-    public String name;
+    private String name;
     private Integer age;
 
     public Integer getId() {

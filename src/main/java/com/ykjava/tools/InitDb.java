@@ -31,10 +31,8 @@ public class InitDb {
         InputStream in = InitDb.class.getClassLoader().getResourceAsStream("resources.properties");
         pps.load(in);
 
-
-        Connection c = null;
         Class.forName(pps.getProperty("driver"));
-        c = DriverManager.getConnection(pps.getProperty("url"),
+        Connection c = DriverManager.getConnection(pps.getProperty("url"),
                 pps.getProperty("user"),
                 pps.getProperty("password"));
 

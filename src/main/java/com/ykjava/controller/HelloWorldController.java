@@ -1,6 +1,5 @@
 package com.ykjava.controller;
 
-import com.sun.javafx.collections.MappingChange;
 import com.ykjava.mapper.UserMapper;
 import com.ykjava.modal.User;
 import com.ykjava.service.HelloWordService;
@@ -10,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -61,5 +59,11 @@ public class HelloWorldController {
     @ResponseBody
     public List<User> getAllUser() {
         return userMapper.getAll();
+    }
+
+    @RequestMapping("/getOne")
+    @ResponseBody
+    public User getOne(@RequestParam("id") int id) {
+        return userMapper.getOne(id);
     }
 }
