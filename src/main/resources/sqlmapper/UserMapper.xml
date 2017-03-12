@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ykjava.mapper.UserMapper">
+    <!--auto generated Code-->
+    <update id="update">
+        UPDATE user
+        <set>
+            <if test="user.id != null"> `id` = #{user.id}, </if>
+            <if test="user.name != null"> `name` = #{user.name}, </if>
+            <if test="user.age != null"> `age` = #{user.age} </if>
+        </set>
+        WHERE id = #{user.id}
+    </update>
+</mapper>
+
